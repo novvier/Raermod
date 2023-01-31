@@ -6,12 +6,12 @@
 #' @param res Numeric vector with resolution in X and Y, or one numeric value to duplicated fo X and Y.
 #' @param pts Numeric vector with points in X and Y, or one numeric value to duplicated fo X and Y.
 #' @return A list with parameters and shape object
-#' @export createDomian
+#' @export create_domian
 #' @examples
-#' createDomian(coords=c(313860, 8617880), ext=4, res=50)
+#' create_domian(coords=c(313860, 8617880), ext=4, res=50)
 #'
 
-createDomian <- function(coords, utm=18, ext=NULL, res=NULL, pts=NULL){
+create_domian <- function(coords, utm=18, ext=NULL, res=NULL, pts=NULL){
   checkExt <- function(x, y, txt){
     if(x%%1 > 0){
       x1 <- ceiling(x)
