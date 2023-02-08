@@ -91,8 +91,14 @@ create_domian <- function(coords, utm=18, ext=NULL, res=NULL, pts=NULL){
     matrix(ncol=2) |> list() |> sf::st_polygon() |> sf::st_sfc(crs=utm) |>
     sf::st_as_sf(domain=1)
   sf::st_geometry(points_sf) <- "geometry"
+  # Creat points
+  CoordsX <- seq(Xinit, Xinit+ext[1], Xdelta)
+  CoordsY <- seq(Yinit, Yinit+ext[2], Xdelta)
+  CoordsXpts <- rep(CoordsX, each = length(CoordsY))
+  CoordsYpts <- rep(CoordsY, times = length(CoordsX))
 
   return(list(PARAM=c("Xinit"=Xinit, "Xnum"=Xnum, "Xdelta"=Xdelta,
                       "Yinit"=Yinit, "Ynum"=Ynum, "Ydelta"=Ydelta),
-              SHP = points_sf))
+              SHP = points_sf,
+              PTS = data.frame(X=CoordsXpts, Y=CoordsYpts)))
 }

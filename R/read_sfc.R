@@ -19,7 +19,8 @@ read_sfc <- function(file){
   sfc$WSTR <- ifelse(sfc$WSTR == -9, NA, sfc$WSTR)
   sfc$DTDZ <- ifelse(sfc$DTDZ == -9, NA, sfc$DTDZ)
   sfc$Z_IC <- ifelse(sfc$Z_IC == -999, NA, sfc$Z_IC)
-  sfc$L_MO <- ifelse(sfc$L_MO == -8888, NA, sfc$L_MO)
+  sfc$Z_IM <- ifelse(sfc$Z_IM == -999, NA, sfc$Z_IM)
+  sfc$L_MO <- ifelse(sfc$L_MO == -99999, NA, sfc$L_MO)
   sfc$WSPD <- ifelse(sfc$WSPD == 999, NA, sfc$WSPD)
   #
   # Corregir el formato de hora. De 1-24 a 0-23
