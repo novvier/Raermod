@@ -19,7 +19,6 @@ ARM2 <- function(nox, rmin=0.5, rmax=0.9){
   if(ratio > rmax){
     ratio = rmax
   }
-  print(ratio)
   return(nox*ratio)
 }
 ARM2 <- Vectorize(ARM2, "nox")
