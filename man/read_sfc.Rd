@@ -4,10 +4,12 @@
 \alias{read_sfc}
 \title{Read SFC file}
 \usage{
-read_sfc(file)
+read_sfc(file, zone = "America/Lima")
 }
 \arguments{
 \item{file}{Path file}
+
+\item{zone}{Time zone}
 }
 \value{
 A data frame

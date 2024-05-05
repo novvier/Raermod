@@ -4,7 +4,7 @@
 \alias{ARM2}
 \title{Estimate NO2 with NOX/NO2 ratop}
 \usage{
-ARM2(nox, rmin = 0.5, rmax = 0.9)
+ARM2(nox, rmin = 0.5, rmax = 0.9, aprof = "EPA")
 }
 \arguments{
 \item{nox}{Concentration NOx in ug/m3}
@@ -12,6 +12,8 @@ ARM2(nox, rmin = 0.5, rmax = 0.9)
 \item{rmin}{Minimum ratio}
 
 \item{rmax}{Maximum ratio}
+
+\item{aprof}{Profile of ratio, must be 'EPA', 'All', 'Urban', 'Rural', 'Industrial' or 'Coastal'}
 }
 \value{
 A vector numeric with NO2 cconcnetration

@@ -1,7 +1,7 @@
 Package: Raermod
 Type: Package
 Title: AERMOD model system tools
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person("Novvier", "Uscuchagua", email = "novvier@outlook.com.pe", role = c("aut", "cre"))
 Author: Novvier Uscuchagua [aut, cre]
 Maintainer: Novvier Uscuchagua <novvier@outlook.com.pe>
@@ -13,4 +13,4 @@ Imports:
     sf
 License: GPL (>= 2)
 BugReports: https://github.com/novvier/Raermod/issues
-RoxygenNote: 7.2.2
+RoxygenNote: 7.3.1

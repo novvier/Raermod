@@ -1,6 +1,7 @@
 #' @title Read SFC file
 #' @description Import SURFACE output AERMET
 #' @param file Path file
+#' @param zone Time zone
 #' @return A data frame
 #' @export read_sfc
 #' @examples
@@ -8,7 +9,7 @@
 #' read_sfc(file_sfc)
 #'
 
-read_sfc <- function(file){
+read_sfc <- function(file, zone="America/Lima"){
   sfc <- utils::read.table(file, header = FALSE, skip = 1, fill = TRUE)
   names(sfc) <- c("YR"  , "MO"  , "DY"  , "JDAY", "HR"  , "HFLX", "USTR",
                   "WSTR", "DTDZ", "Z_IC", "Z_IM", "L_MO", "Z0_R", "BWNR",
@@ -23,12 +24,12 @@ read_sfc <- function(file){
   sfc$L_MO <- ifelse(sfc$L_MO == -99999, NA, sfc$L_MO)
   sfc$WSPD <- ifelse(sfc$WSPD == 999, NA, sfc$WSPD)
   #
-  # Corregir el formato de hora. De 1-24 a 0-23
-  sfc$HR <- sfc$HR - 1
+  # Corregir el formato de hora. De 1-24 a 0-23 (ERROR, NO ES NECESARIO)
+  # sfc$HR <- sfc$HR - 1
   #
-  date <- paste(sfc$YR, sfc$MO, sfc$DY, sfc$HR, sep = "-")
-  date <- as.POSIXct(strptime(date, format = "%y-%m-%d-%H"))
+  datetime <- paste(sfc$YR, sfc$MO, sfc$DY, sfc$HR, sep = "-")
+  datetime <- as.POSIXct(strptime(datetime, format = "%y-%m-%d-%H", tz=zone))
   sfc <- sfc[, 6:27]
-  sfc <- cbind(date, sfc)
+  sfc <- cbind(datetime, sfc)
   return(sfc)
 }
