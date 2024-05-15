@@ -8,9 +8,11 @@ Maintainer: Novvier Uscuchagua <novvier@outlook.com.pe>
 Description: Provide tools for management inputs and outputs of AERMOD model system.
 Encoding: UTF-8
 LazyData: true
-Depends: R (>= 4.1)
-Imports: 
-    sf
+Depends: 
+    R (>= 4.2)
+Imports:
+    terra (>= 1.7),
+    sf (>= 1.0)
 License: GPL (>= 2)
 BugReports: https://github.com/novvier/Raermod/issues
 RoxygenNote: 7.3.1
